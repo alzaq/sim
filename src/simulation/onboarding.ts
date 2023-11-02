@@ -91,16 +91,19 @@ export class Onboarding extends Simulation {
   }
 }
 
-// define the Customer entity used by the Barbershop simulation
+// TODO
+// TODO
+// TODO
 class Customer extends SimulationEntity<Onboarding> {
   service = new Uniform(15 - 3, 15 + 3);
   async script() {
-    const shop = this.simulation;
     await this.delay(this.service.sample()); // get a haircut
   }
 }
 
+//
 // WelcomeMessage
+//
 class WelcomeMessage extends SimulationEntity<Onboarding> {
   entity: Entity;
 
@@ -130,7 +133,9 @@ class WelcomeMessage extends SimulationEntity<Onboarding> {
   }
 }
 
+//
 // ReactionMessage
+//
 class IntroduceMessage extends SimulationEntity<Onboarding> {
   entity: Entity;
   initiator: Entity;
@@ -160,7 +165,9 @@ class IntroduceMessage extends SimulationEntity<Onboarding> {
   }
 }
 
-// ReactionMessage
+//
+// GreetMessage
+//
 class GreetMessage extends SimulationEntity<Onboarding> {
   entity: Entity;
   target: Entity;
