@@ -52,6 +52,7 @@ export default function Home() {
         case SimulationState.Finished:
           simulation.logger.log(`ℹ️ [INFO] Simulation is finished!`);
           setIsRunning(false);
+          break;
         case SimulationState.Paused:
           simulation.logger.log(`ℹ️ [INFO] Simulation is paused!`);
           setIsRunning(false);
@@ -127,7 +128,6 @@ export default function Home() {
   return (
     <main>
       <h1>Simulation</h1>
-      <h2>Events</h2>
       <div>
         <button onClick={handleClear}>Clear console</button>{' '}
         <button onClick={handleStart} disabled={isRunning}>
@@ -141,7 +141,7 @@ export default function Home() {
         </button>
       </div>
 
-      <h2>Console</h2>
+      <h2>Output</h2>
       <span ref={timeRef}>---</span>
       <pre
         ref={consoleRef}

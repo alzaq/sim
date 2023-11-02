@@ -1,5 +1,7 @@
 const logger = (element: HTMLElement): Console => {
-  const lines: any[] = [];
+  const lines: any[] = element.textContent
+    ? element.textContent.split('\n')
+    : [];
 
   const render = () => {
     element.textContent = lines.join('\n');
